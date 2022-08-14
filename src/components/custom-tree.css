@@ -1,0 +1,18 @@
+.node__root > circle {
+    fill: #60a5fa;
+  }
+  
+  .node__branch > circle {
+    fill: #60a5fa;
+  }
+  
+  .node__leaf > circle {
+    fill: #60a5fa;
+    /* Let's also make the radius of leaf nodes larger */
+    /* r: 40; */
+  }
+  #treeWrapper{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+  }
