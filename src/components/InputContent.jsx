@@ -12,6 +12,7 @@ const InputContent = () => {
         e.preventDefault();
         setInputValue(inputvalue);
         setSubmitTree(true);
+        
         // <TreeComponent inputvalue={inputvalue}/>
         // InputTree(inputvalue);
         // console.log(inputvalue);
@@ -24,8 +25,9 @@ const InputContent = () => {
     // console.log(treestring);
     
   return (
-    <div className="m-10 px-40  ">
-        <p className="shadow-sm border p-2 rounded-lg text-lg">Input Format:<br/>
+    
+    <div className="sm:m-10 md:px-40 z-0 absolute top-20 md:w-screen w-screen  ">
+        <p className="shadow-sm border p-2 rounded-lg text-lg hover:border hover:border-black">Input Format:<br/>
         The tree in the input is given in the form of a string as described below. <br/>
         The values in the string are in the order of level order traversal of the tree where, numbers denote node values, and a character “N” denotes NULL child.
         <br/>
@@ -34,15 +36,16 @@ const InputContent = () => {
         
 </p>
 <br/>
-    <form onSubmit={handleSubmit}>
-        <input value={inputvalue} onChange={handleChange} className="type-text drop-shadow shadow-md hover:shadow-lg bg-white-200 border w-full rounded-lg h-14 border-gray-300 text-xl placeholder-gray pl-10" placeholder="Enter Your GFG string here"/>
+    <form onSubmit={handleSubmit} >
+        <input value={inputvalue} onChange={handleChange} className="hover:border-black type-text drop-shadow shadow-md hover:shadow-lg bg-white-200 border w-full rounded-lg h-14 border-gray-300 text-xl placeholder-gray pl-10" placeholder="Enter Your GFG string here"/>
         <br/>
         <br/> 
-        <div className="mx-96 ">
+        <div className="sm:mx-96 md:mx-36 mx-24">
             <button className="p-4  text-white text-xl button bg-blue-500 shadow-lg hover:shadow-xl hover:bg-blue-600 hover:shadow-gray-400 rounded-lg shadow-gray-400 shadow-white-400"type="submit">Generate Tree</button>
         </div>
     </form>
     {submitTree===true?<TreeComponent inputvalue={inputvalue}/>:null}
+    {/* {setSubmitTree(false)} */}
     </div>
   )
 }
