@@ -2,6 +2,47 @@ import React from 'react'
 import Tree from 'react-d3-tree';
 import './custom-tree.css';
 
+
+function insertValue(value,map,queue){
+  let temp;
+  if(isNaN(value)){
+    temp={
+      "name":value
+    }
+  }
+  else{
+    temp={
+      "name":value,
+      "children":[]
+    }
+  }
+    if(map.length===0){
+      map.push(temp);
+    }
+    else if(queue[0].children&&queue[0].children.length===0){
+        queue[0].children.push(temp);
+    }
+    else if(queue[0].children&&queue[0].children.length===1){
+      queue[0].children.push(temp);
+      queue.shift();
+  }
+  
+  if(isNaN(value)===false){
+    queue.push(temp);
+  }
+}
+
+// let map={};
+function createTree(arr){
+  let map=[];
+  let queue=[];
+  let n=arr.length;
+  for(let i = 0; i < n; i++)
+      {
+        insertValue(arr[i],map,queue);
+      }
+      return map;
+}
 function list_to_tree(list,i,map) {	
     if (map === undefined) {
       map = {"name":"null"};
@@ -10,8 +51,9 @@ function list_to_tree(list,i,map) {
       if(isNaN(list[i])===false){
         map = {"name": list[i],"children":[]};
       }
-      else{
-        map = {"name": list[i]};
+      else{  
+        return map = {"name": list[i]};
+
       }
       if (2*i+1 < list.length ) 
         {               
@@ -62,9 +104,11 @@ len = string_arr.length;
 for (var i = 0; i < len; i++){
   numberArray.push(parseInt(string_arr[i]));
 }
-let map={};
+let map;
 console.log(numberArray);
-map=list_to_tree(numberArray,0,undefined);
+// map=list_to_tree(numberArray,0,undefined);
+let mapArray=createTree(numberArray);
+map=mapArray[0];
   return (
     // console.log("inside tree component");
     <div>tree

@@ -1,7 +1,6 @@
 .node__root > circle {
-    fill: #60a5fa;
+    fill: #ff0000;
   }
-  
   .node__branch > circle {
     fill: #60a5fa;
   }

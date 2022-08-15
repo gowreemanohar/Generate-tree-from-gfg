@@ -8,9 +8,6 @@ const Navbar = () => {
                     GFG
                 </p>
                 <p>
-                    Leetcode
-                </p>
-                <p>
                     Links
                 </p>
                 

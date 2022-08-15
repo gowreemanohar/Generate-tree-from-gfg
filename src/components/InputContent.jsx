@@ -25,7 +25,7 @@ const InputContent = () => {
     
   return (
     <div className="m-10 px-40  ">
-        <p className="shadow-sm border p-2 rounded-lg">Input Format:<br/>
+        <p className="shadow-sm border p-2 rounded-lg text-lg">Input Format:<br/>
         The tree in the input is given in the form of a string as described below. <br/>
         The values in the string are in the order of level order traversal of the tree where, numbers denote node values, and a character “N” denotes NULL child.
         <br/>
